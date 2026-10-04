@@ -1,6 +1,6 @@
 # Proyecto de Parsers de PDFs con Python y RegEx
 
-automatice la extracción de datos de facturas y órdenes de pago en PDF que tienen formatos totalmente distintos. La idea es armar un script en Python que lea el PDF y me devuelva la info limpia en un JSON estructurado.
+automatice la extracción de datos de facturas y órdenes de pago en PDF que tienen formatos totalmente distintos. La idea es armar un script en Python que lea el PDF y me devuelva la info limpia en un JSON estructurado, dejándola lista para que el área de integraciones la conecte con cualquier ERP o sistema contable.
 
 ---
 

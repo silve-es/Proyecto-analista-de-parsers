@@ -12,9 +12,15 @@ def extraer_texto_pdf(ruta_pdf):
 def parsear_factura_edesur(ruta_pdf):
     texto = extraer_texto_pdf(ruta_pdf)
     
-    # Expresión regular para capturar el CUIT
-    cuit_pattern = r'30[\s-]*\d{8}[\s-]*\d'
-    
+    # Si detectamos que es Edesur, asignamos su CUIT conocido
+    if "Edesur" in texto:
+        cuit_emisor_valor = "30-65511651-2"
+    else:
+        # Patrón alternativo por si procesás otra factura en el futuro
+        cuit_pattern = r'30[\s-]*\d{8}[\s-]*\d'
+        match_cuit = re.search(cuit_pattern, texto)
+        cuit_emisor_valor = match_cuit.group(0) if match_cuit else None
+
     # Expresión regular para capturar la fecha de emisión
     fecha_pattern = r'(?:Capital Federal|CABA).*?(\d{2}/\d{2}/\d{4})'
     

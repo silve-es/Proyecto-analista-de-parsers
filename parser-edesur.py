@@ -24,7 +24,6 @@ def parsear_factura_edesur(ruta_pdf):
     # Expresión regular para capturar el importe total 
     total_pattern = r'(?i)TOTAL[:\s]*[\$\|\s]*([\d\.,]+)'
 
-    
     fecha = re.search(fecha_pattern, texto)
     total = re.search(total_pattern, texto)
 
@@ -38,6 +37,7 @@ def parsear_factura_edesur(ruta_pdf):
     return datos_factura
 
 if __name__ == "__main__":
+    # Mantuvimos el bloque de prueba local por si querés ejecutarlo directo desde tu terminal
     ruta_pdf = "samples/Factura-Edesur.pdf"
     
     print(f"Procesando el archivo: {ruta_pdf}...")
